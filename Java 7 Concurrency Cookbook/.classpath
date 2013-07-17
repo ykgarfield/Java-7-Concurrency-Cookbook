@@ -10,5 +10,6 @@
 	<classpathentry kind="src" path="chapter08.test_concurrent_apps"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.7.0_09"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="lib/MultithreadedTC-1.01.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
