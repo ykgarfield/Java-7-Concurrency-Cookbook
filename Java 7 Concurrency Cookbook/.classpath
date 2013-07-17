@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="chapter01.threadmanager"/>
+	<classpathentry kind="src" path="chapter02.basicthreadsyn"/>
+	<classpathentry kind="src" path="chapter03.syn_utilities"/>
+	<classpathentry kind="src" path="chapter04.thread_executors"/>
+	<classpathentry kind="src" path="chapter05.fork_join"/>
+	<classpathentry kind="src" path="chapter06.concurrent_collections"/>
+	<classpathentry kind="src" path="chapter07.customer_concurrency_classes"/>
+	<classpathentry kind="src" path="chapter08.test_concurrent_apps"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.7.0_09"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

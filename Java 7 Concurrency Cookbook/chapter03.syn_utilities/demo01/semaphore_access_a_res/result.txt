@@ -1,0 +1,40 @@
+Thread 0 获得信号量  at : 52:57.671
+Thread 2 获得信号量  at : 52:57.671
+Thread 2: PrintQueue: Printing a Job during 9 seconds
+Thread 0: PrintQueue: Printing a Job during 5 seconds
+Thread 0 释放信号量  at : 53:02.828
+
+Thread 3 获得信号量  at : 53:02.828
+Thread 3: PrintQueue: Printing a Job during 8 seconds
+Thread 2 释放信号量  at : 53:06.828
+
+Thread 4 获得信号量  at : 53:06.828
+Thread 4: PrintQueue: Printing a Job during 5 seconds
+Thread 3 释放信号量  at : 53:10.828
+
+Thread 1 获得信号量  at : 53:10.828
+Thread 1: PrintQueue: Printing a Job during 1 seconds
+Thread 1 释放信号量  at : 53:11.828
+
+Thread 5 获得信号量  at : 53:11.828
+Thread 5: PrintQueue: Printing a Job during 2 seconds
+Thread 4 释放信号量  at : 53:11.828
+
+Thread 6 获得信号量  at : 53:11.828
+Thread 6: PrintQueue: Printing a Job during 5 seconds
+Thread 5 释放信号量  at : 53:13.843
+
+Thread 7 获得信号量  at : 53:13.843
+Thread 7: PrintQueue: Printing a Job during 6 seconds
+Thread 6 释放信号量  at : 53:16.828
+
+Thread 8 获得信号量  at : 53:16.828
+Thread 8: PrintQueue: Printing a Job during 3 seconds
+Thread 7 释放信号量  at : 53:19.843
+
+Thread 8 释放信号量  at : 53:19.843
+
+Thread 9 获得信号量  at : 53:19.843
+Thread 9: PrintQueue: Printing a Job during 8 seconds
+Thread 9 释放信号量  at : 53:27.843
+

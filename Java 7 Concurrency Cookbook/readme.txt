@@ -1,0 +1,1 @@
+  请使用JDK7, 有些范例已经使用了JDK7的一些新特性.比如try-with-resources语句.
