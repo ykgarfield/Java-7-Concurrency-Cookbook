@@ -17,6 +17,7 @@ public class Task implements Runnable {
 	public void run() {
 		Date now = new Date();
 		Date delay = new Date();
+		// 可以粗略认为每个线程之间隔1秒钟
 		delay.setTime(now.getTime() + (id * 1000));
 
 		System.out.printf("Thread %s: %s\n", id, delay);
