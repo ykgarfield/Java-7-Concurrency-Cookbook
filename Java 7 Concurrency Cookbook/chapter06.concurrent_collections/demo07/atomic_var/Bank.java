@@ -1,17 +1,17 @@
-package demo08.atomic_var;
+package demo07.atomic_var;
 
-public class Company implements Runnable {
+public class Bank implements Runnable {
 
 	private Account account;
 
-	public Company(Account account) {
+	public Bank(Account account) {
 		this.account = account;
 	}
 
 	@Override
 	public void run() {
 		for (int i = 0; i < 10; i++) {
-			account.addAmount(1000);
+			account.subtractAmount(1000);
 		}
 	}
 

@@ -1,4 +1,4 @@
-package demo08.atomic_var;
+package demo07.atomic_var;
 
 public class Main {
 	public static void main(String[] args) {
