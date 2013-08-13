@@ -11,7 +11,7 @@ Java-7-Concurrency-Cookbook
 
  平时的笔记都是用的为知笔记,制作成PDF,貌似效果不是很好,制作成CHM看上去比较舒适一些.
 
- 不是很熟悉的单词用了<font color='blue'>蓝色</font>进行标记,错误用<font color='red'>红色标记,实在翻译不过来的加上了前缀FIXME并红色标记.
+ 不是很熟悉的单词用了<font color='blue'>蓝色</font>进行标记,错误用<font color='red'>红色</font>标记,实在翻译不过来的加上了前缀FIXME并红色标记.
 
  每一小节,基本上都会出现"In this recipe",翻译成"这个食谱"、"这个秘诀"挺怪异的,翻译成"这个技巧"倒是合理些,不过为了合乎上下文,译成了"在这节"(一个主题作为一个小节).
 

@@ -24,34 +24,41 @@ public class FolderProcessor extends RecursiveTask<List<String>> {
 
 	@Override
 	protected List<String> compute() {
-		List<String> list = new ArrayList<>();
-		List<FolderProcessor> tasks = new ArrayList<>();
+		List<String> list = new ArrayList<>(); // 保存结果, 文件的全路径
+		List<FolderProcessor> tasks = new ArrayList<>(); // 保存将要处理子目录的子任务
 
 		File file = new File(path);
 		File[] content = file.listFiles();
 		if (content != null) {
 			for (int i = 0; i < content.length; i++) {
 				if (content[i].isDirectory()) {
+					// 如果是任务,执行一个新的任务
 					FolderProcessor task = new FolderProcessor(content[i].getAbsolutePath(), extension);
-					task.fork();
+					task.fork();	// 异步执行
 					tasks.add(task);
 				} else {
+					// 如果是文件,比较文件的扩展名和要查找的扩展名是否一致
 					if (checkFile(content[i].getName())) {
-
+						list.add(content[i].getAbsolutePath());
 					}
 				}
 			}
 
+			// 子任务超过50个输出信息
 			if (tasks.size() > 50) {
 				System.out.printf("%s: %d tasks ran.\n", file.getAbsolutePath(), tasks.size());
 			}
 
+			// 等待任务结束,处理结果
 			addResultsFromTasks(list, tasks);
 		}
-		
+
 		return list;
 	}
 
+	/**
+	 * 调用join()方法等待执行结束,join()方法将返回任务的结果.
+	 */
 	private void addResultsFromTasks(List<String> list, List<FolderProcessor> tasks) {
 		for (FolderProcessor item : tasks) {
 			list.addAll(item.join());
