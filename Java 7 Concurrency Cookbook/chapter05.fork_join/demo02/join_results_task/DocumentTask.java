@@ -32,15 +32,19 @@ public class DocumentTask extends RecursiveTask<Integer> {
 	protected Integer compute() {
 		Integer result = null;
 		if (end - start < 10) {
+			// 小于10行, 直接处理
 			result = processLines(document, start, end, word);
 		} else {
+			// 分隔任务
 			int mid = (start + end) / 2;
 			DocumentTask task1 = new DocumentTask(document, start, mid, word);
 			DocumentTask task2 = new DocumentTask(document, mid, end, word);
 
+			// 处理任务
 			invokeAll(task1, task2);
 
 			try {
+				// 计算结果
 				result = groupResults(task1.get(), task2.get());
 			} catch (InterruptedException | ExecutionException e) {
 				e.printStackTrace();
@@ -50,10 +54,12 @@ public class DocumentTask extends RecursiveTask<Integer> {
 		return result;
 	}
 
-	private Integer processLines(String[][] document2, int start2, int end2, String word2) {
+	// 处理行 => 行任务
+	private Integer processLines(String[][] document, int start, int end, String word) {
 		List<LineTask> tasks = new ArrayList<>();
 
 		for (int i = start; i < end; i++) {
+			// 行任务
 			LineTask task = new LineTask(document[i], 0, document[i].length, word);
 			tasks.add(task);
 		}
@@ -61,6 +67,7 @@ public class DocumentTask extends RecursiveTask<Integer> {
 		invokeAll(tasks);
 
 		int result = 0;
+		// 处理返回结果
 		for (int i = 0; i < tasks.size(); i++) {
 			LineTask task = tasks.get(i);
 
@@ -74,6 +81,7 @@ public class DocumentTask extends RecursiveTask<Integer> {
 		return new Integer(result);
 	}
 
+	// 计算结果
 	private Integer groupResults(Integer number1, Integer number2) {
 		Integer result;
 		result = number1 + number2;

@@ -3,9 +3,11 @@ package demo02.join_results_task;
 import java.util.Random;
 
 public class DocumentMock {
+	// 定义一些关键词, 用来生成String矩阵
 	private String words[] = { "the", "hello", "goodbye", "packt", "java", 
 							   "thread", "pool", "random", "class", "main" };
 
+	// 生成二维数组,并计算关键字出现的次数
 	public String[][] generateDocument(int numLines, int numWords, String word) {
 		int counter = 0;
 		String[][] document = new String[numLines][numWords];

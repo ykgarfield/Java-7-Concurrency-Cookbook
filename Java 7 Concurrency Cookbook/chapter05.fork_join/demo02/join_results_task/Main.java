@@ -6,11 +6,11 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
 	public static void main(String[] args) {
-		// 生成一个100行和每行有1000个单词的文档
+		// 生成一个10行和每行有100个单词的文档,书中是100行和每行1000个单词,这里是为了更快的看到结果
 		DocumentMock mock = new DocumentMock();
-		String[][] document = mock.generateDocument(100, 1000, "the");
+		String[][] document = mock.generateDocument(10, 100, "the");
 
-		DocumentTask task = new DocumentTask(document, 0, 100, "the");
+		DocumentTask task = new DocumentTask(document, 0, 10, "the");
 		ForkJoinPool pool = new ForkJoinPool();
 
 		pool.execute(task);
@@ -44,4 +44,21 @@ public class Main {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 	DocumentMock: The word appears 103 times in the document.
+		******************************************
+		Main: Parallelism: 2
+		Main: Active Threads: 1
+		Main: Task Count: 0
+		Main: Steal Count: 0
+		******************************************
+		******************************************
+		Main: Parallelism: 2
+		Main: Active Threads: 2
+		Main: Task Count: 8
+		Main: Steal Count: 0
+		******************************************
+		Main: The word appears 103 in the document
+	 */
 }

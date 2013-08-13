@@ -29,8 +29,10 @@ public class LineTask extends RecursiveTask<Integer> {
 		Integer result = null;
 
 		if (end - start < 10) {
+			// 小于10个单词,直接计算结果
 			result = count(line, start, end, word);
 		} else {
+			// 分隔任务
 			int mid = (start + end) / 2;
 			LineTask task1 = new LineTask(line, start, mid, word);
 			LineTask task2 = new LineTask(line, mid, end, word);
@@ -47,7 +49,8 @@ public class LineTask extends RecursiveTask<Integer> {
 		return result;
 	}
 
-	private Integer count(String[] line2, int start2, int end2, String word2) {
+	// 计算结果
+	private Integer count(String[] line, int start, int end, String word) {
 		int counter = 0;
 		for (int i = start; i < end; i++) {
 			if (line[i].equals(word)) {
@@ -56,6 +59,7 @@ public class LineTask extends RecursiveTask<Integer> {
 		}
 
 		try {
+			// 减缓程序的执行,休眠一会儿
 			TimeUnit.MILLISECONDS.sleep(10);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
